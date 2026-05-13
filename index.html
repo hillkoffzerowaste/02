@@ -23,23 +23,6 @@
 
 <script type="text/babel">
 const { useState, useRef, useEffect } = React;
-
-/* ═══════════════════════════════════════════════════════════════
-   HILLKOFF ZERO WASTE PLATFORM v2
-   GitHub Pages — Standalone index.html (no build required)
-   ISO 14064 / GHG Protocol / WEEE / SDG 12
-
-   วิธี Deploy บน GitHub Pages:
-   1. สร้าง repository ใหม่บน GitHub
-   2. อัปโหลดไฟล์ index.html นี้ไปที่ root ของ repo
-   3. ไปที่ Settings → Pages → Branch: main / root
-   4. รอ 1-2 นาที แล้วเข้าที่ https://<username>.github.io/<repo>/
-
-   หมายเหตุ: Gemini API ต้องใส่ key ของคุณเองที่ GEMINI_KEY
-   (ดูวิธีขอ key ได้ที่ https://aistudio.google.com/app/apikey)
-═══════════════════════════════════════════════════════════════ */
-
-// ↓ ใส่ Gemini API Key ของคุณที่นี่ (หรือเว้นว่างเพื่อใช้โหมด Demo)
 const GEMINI_KEY = "AIzaSyC97a8JLeMNFtQc7ikvACU4PJMDfF_o2nQ";
 
 const BRANCHES = [
@@ -93,7 +76,6 @@ function dbSave(records) {
 }
 
 async function geminiAnalyze(base64, wasteLabel) {
-  // โหมด Demo — ใช้เมื่อไม่มี API Key
   if (!GEMINI_KEY) {
     await new Promise(r => setTimeout(r, 1500));
     const confidence = 75 + Math.floor(Math.random() * 22);
